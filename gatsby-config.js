@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/gesias",
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "Gesias",
@@ -6,6 +7,8 @@ module.exports = {
   plugins: [
     "gatsby-plugin-emotion",
     "gatsby-plugin-image",
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -29,6 +32,15 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    "gatsby-plugin-postcss",
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
     },
   ],
 };
