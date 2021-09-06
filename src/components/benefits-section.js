@@ -10,7 +10,12 @@ import IconLock from "../assets/lock-closed-outline.svg";
 
 const BenefitsSection = ({ fluid }) => {
   return (
-    <section class="container mx-auto sm:py-12 text-gray-800 px-3 py-6">
+    <section
+      class="container mx-auto sm:py-12 text-gray-800 px-3 py-6"
+      data-sal="slide-up"
+      data-sal-duration="400"
+      data-sal-easing="ease-out-bounce"
+    >
       <TitleSection>Nuestros beneficios</TitleSection>
 
       <div class="grid sm:grid-cols-2 place-items-center sm:my-12 my-6 sm:gap-20 gap-4">

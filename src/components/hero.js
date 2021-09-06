@@ -8,7 +8,10 @@ const Hero = ({ fluid }) => {
       <figure className="hidden sm:block">
         <Img fluid={fluid} />
       </figure>
-      <div className="self-center justify-self-center sm:p-10 px-3 py-6">
+      <div
+        className="self-center justify-self-center sm:p-10 px-3 py-6"
+        data-sal="slide-up"
+      >
         <h1 className="text-4xl text-gray-800 font-bold mb-2">
           App para tu iglesia
         </h1>

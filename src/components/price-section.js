@@ -32,7 +32,10 @@ const plans = [
 
 const PriceSection = ({ fluid }) => {
   return (
-    <section class="sm:py-12 bg-gray-200 text-gray-800 px-3 py-6">
+    <section
+      class="sm:py-12 bg-gray-200 text-gray-800 px-3 py-6"
+      data-sal="slide-up"
+    >
       <div className="container mx-auto">
         <TitleSection>Nuestros precios</TitleSection>
 
