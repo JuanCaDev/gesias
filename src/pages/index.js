@@ -18,12 +18,12 @@ const IndexPage = ({ data }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <div className="bg-blue-400 bg-opacity-50">
+      <div className="bg-gradient-to-b from-blue-light to-white bg-opacity-50 h-screen text-blue">
         <Header />
         <Hero fluid={data.hero.childImageSharp.fluid} />
       </div>
 
-      <main>
+      <main className="text-blue">
         <BenefitsSection fluid={data.pc.childImageSharp.fluid} />
 
         <PriceSection />

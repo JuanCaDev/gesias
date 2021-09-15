@@ -13,53 +13,61 @@ const BenefitsSection = ({ fluid }) => {
     <section
       class="container mx-auto sm:py-12 text-gray-800 px-3 py-6"
       data-sal="slide-up"
-      data-sal-duration="400"
+      data-sal-duration="600"
       data-sal-easing="ease-out-bounce"
+      id="benefits"
     >
       <TitleSection>Nuestros beneficios</TitleSection>
 
       <div class="grid sm:grid-cols-2 place-items-center sm:my-12 my-6 sm:gap-20 gap-4">
         <div>
-          <h3 class="text-2xl font-bold mb-2">Disponible 24/7 para ti</h3>
+          <h3 class="text-2xl font-bold mb-2">Disponible para ti 24/7</h3>
           <p>
-            Te ofrecemos un software maestro en la administración y organización
-            de la información de tu iglesia desde cualquierlugar donde tengas
-            conexión
+            Iglenube es la plataforma digital para iglesias más completa del
+            mercado. Con nuestro software podrás gestionar eventos, reuniones,
+            ministerios, miembros, bautizos y mucho más desde un mismo lugar.
           </p>
         </div>
 
         <figure className="sm:w-96 relative w-full p-10 sm:p-0">
-          <div className="bg-gray-300 bg-opacity-40 rounded-lg sm:w-64 sm:h-64 w-40 h-40 left-0 absolute right-0 transform rotate-45"></div>
+          <div className="bg-gray-lightest rounded-lg sm:w-64 sm:h-64 w-40 h-40 left-0 absolute right-0 transform rotate-45"></div>
           <Img fluid={fluid} />
         </figure>
       </div>
 
-      <div class="grid sm:grid-cols-3 gap-4 container mx-auto sm:pt-10 pt-5">
-        <article className="flex gap-4 sm:block sm:gap-0">
-          <figure class="bg-blue-100 rounded p-2 w-max">
-            <IconPhone width={32} height={32} />
-          </figure>
-          <h3 class="text-xl sm:mt-2 font-semibold">
-            Accede desde todos tus dispositivos
-          </h3>
+      <div class="grid sm:grid-cols-3 sm:gap-4 gap-2 container mx-auto sm:pt-10 pt-5">
+        <article className="bg-gray-lightest rounded p-6">
+          <div className="flex gap-3 mb-2 items-center">
+            <figure class="bg-blue-light bg-opacity-30 rounded-full p-2 w-max">
+              <IconPhone width={32} height={32} />
+            </figure>
+            <h3 class="text-xl sm:mt-2 font-semibold">Multiplataforma</h3>
+          </div>
+          <p>
+            Te brindamos la facilidad de acceder desde cualquier dispositivo
+          </p>
         </article>
 
-        <article className="flex gap-4 sm:block sm:gap-0">
-          <figure class="bg-blue-100 rounded p-2 w-max">
-            <IconAlbums width={32} height={32} />
-          </figure>
-          <h3 class="text-xl sm:mt-2 font-semibold">
-            Información organizada detallada
-          </h3>
+        <article className="bg-gray-lightest rounded p-6">
+          <div className="flex gap-3 mb-2 items-center">
+            <figure class="bg-blue-light bg-opacity-30 rounded-full p-2 w-max">
+              <IconAlbums width={32} height={32} />
+            </figure>
+            <h3 class="text-xl sm:mt-2 font-semibold">Organización</h3>
+          </div>
+          <p>
+            Visualiza tu información detallada y organizada. Ahorrarás tiempo
+          </p>
         </article>
 
-        <article className="flex gap-4 sm:block sm:gap-0">
-          <figure class="bg-blue-100 rounded p-2 w-max">
-            <IconLock width={32} height={32} />
-          </figure>
-          <h3 class="text-xl sm:mt-2 font-semibold">
-            Seguridad en tus datos y usuarios
-          </h3>
+        <article className="bg-gray-lightest rounded p-6">
+          <div className="flex gap-3 mb-2 items-center">
+            <figure class="bg-blue-light bg-opacity-30 rounded-full p-2 w-max">
+              <IconLock width={32} height={32} />
+            </figure>
+            <h3 class="text-xl sm:mt-2 font-semibold">Seguridad</h3>
+          </div>
+          <p>Tus datos y los de tu comunidad están seguros con nosotros</p>
         </article>
       </div>
     </section>
