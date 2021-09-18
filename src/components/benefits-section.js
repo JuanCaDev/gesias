@@ -1,4 +1,4 @@
-import * as React from "react";
+  import * as React from "react";
 
 import Img from "gatsby-image";
 
@@ -29,15 +29,15 @@ const BenefitsSection = ({ fluid }) => {
           </p>
         </div>
 
-        <figure className="sm:w-96 relative w-full p-10 sm:p-0">
-          <div className="bg-gray-lightest rounded-lg sm:w-64 sm:h-64 w-40 h-40 left-0 absolute right-0 transform rotate-45"></div>
+        <figure className="relative w-full p-10 sm:w-96 sm:p-0">
+          <div className="absolute left-0 right-0 w-40 h-40 transform rotate-45 rounded-lg bg-gray-lightest sm:w-64 sm:h-64"></div>
           <Img fluid={fluid} />
         </figure>
       </div>
 
       <div class="grid sm:grid-cols-3 sm:gap-4 gap-2 container mx-auto sm:pt-10 pt-5">
-        <article className="bg-gray-lightest rounded p-6">
-          <div className="flex gap-3 mb-2 items-center">
+        <article className="p-6 rounded bg-gray-lightest">
+          <div className="flex items-center gap-3 mb-2">
             <figure class="bg-blue-light bg-opacity-30 rounded-full p-2 w-max">
               <IconPhone width={32} height={32} />
             </figure>
@@ -48,8 +48,8 @@ const BenefitsSection = ({ fluid }) => {
           </p>
         </article>
 
-        <article className="bg-gray-lightest rounded p-6">
-          <div className="flex gap-3 mb-2 items-center">
+        <article className="p-6 rounded bg-gray-lightest">
+          <div className="flex items-center gap-3 mb-2">
             <figure class="bg-blue-light bg-opacity-30 rounded-full p-2 w-max">
               <IconAlbums width={32} height={32} />
             </figure>
@@ -60,8 +60,8 @@ const BenefitsSection = ({ fluid }) => {
           </p>
         </article>
 
-        <article className="bg-gray-lightest rounded p-6">
-          <div className="flex gap-3 mb-2 items-center">
+        <article className="p-6 rounded bg-gray-lightest">
+          <div className="flex items-center gap-3 mb-2">
             <figure class="bg-blue-light bg-opacity-30 rounded-full p-2 w-max">
               <IconLock width={32} height={32} />
             </figure>

@@ -64,7 +64,7 @@ const PriceSection = () => {
       <div className="container mx-auto">
         <TitleSection>Nuestros precios</TitleSection>
 
-        <div className="my-6 flex justify-center gap-2">
+        <div className="flex justify-center gap-1 my-6 sm:gap-2">
           <label
             className={`
               ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full "}
@@ -124,12 +124,12 @@ const PriceSection = () => {
           {plans.map((plan, index) => (
             <>
               {index === 2 ? (
-                <div className="bg-blue-light rounded-md py-5 px-4 text-center text-white">
+                <div className="px-4 py-5 text-center text-white rounded-md bg-blue-light">
                   <h3 className="text-lg font-semibold">{plan.title}</h3>
-                  <p className="text-4xl font-semibold my-2">
+                  <p className="my-2 text-4xl font-semibold">
                     {plan.price[checkedValue]}
                   </p>
-                  <p className="text-gray-100 text-sm h-12 mb-4">
+                  <p className="h-12 mb-4 text-sm text-gray-100">
                     {plan.description}
                   </p>
                   {/* <ul className="mt-4 divide-y">
@@ -139,18 +139,18 @@ const PriceSection = () => {
                   </ul> */}
                   <button
                     type="button"
-                    className="px-8 mt-8 py-2 w-full bg-white rounded text-blue font-semibold"
+                    className="w-full px-8 py-2 mt-8 font-semibold bg-white rounded text-blue"
                   >
                     Adquirir
                   </button>
                 </div>
               ) : (
-                <div className="bg-white rounded-md py-5 px-4 text-center">
+                <div className="px-4 py-5 text-center bg-white rounded-md">
                   <h3 className="text-lg font-semibold">{plan.title}</h3>
-                  <p className="text-4xl font-semibold my-2">
+                  <p className="my-2 text-4xl font-semibold">
                     {plan.price[checkedValue]}
                   </p>
-                  <p className="text-gray-600 text-sm h-12 mb-4">
+                  <p className="h-12 mb-4 text-sm text-gray-600">
                     {plan.description}
                   </p>
                   {/* <ul className="mt-4 divide-y">
@@ -160,7 +160,7 @@ const PriceSection = () => {
                   </ul> */}
                   <button
                     type="button"
-                    className="px-8 mt-8 py-2 w-full bg-blue rounded text-white font-semibold"
+                    className="w-full px-8 py-2 mt-8 font-semibold text-white rounded bg-blue"
                   >
                     Adquirir
                   </button>

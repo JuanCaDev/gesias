@@ -5,6 +5,7 @@ import Header from "../components/header";
 import Hero from "../components/hero";
 import BenefitsSection from "../components/benefits-section";
 import PriceSection from "../components/price-section";
+import SEO from "../components/seo";
 
 const IndexPage = ({ data }) => {
   console.log(data);
@@ -18,9 +19,12 @@ const IndexPage = ({ data }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <div className="bg-gradient-to-b from-blue-light to-white bg-opacity-50 h-screen text-blue">
-        <Header />
-        <Hero fluid={data.hero.childImageSharp.fluid} />
+
+      <SEO />
+
+      <div className="h-screen bg-opacity-50 bg-gradient-to-b from-blue-light to-white text-blue">
+        <Header fluid={data.logo.childImageSharp.fluid} />
+        <Hero />
       </div>
 
       <main className="text-blue">
@@ -34,10 +38,10 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    hero: file(relativePath: { eq: "hero.png" }) {
+    logo: file(relativePath: { eq: "logo-blue-dark.png" }) {
       id
       childImageSharp {
-        fluid(maxWidth: 700, maxHeight: 400) {
+        fluid(maxWidth: 122, maxHeight: 60) {
           ...GatsbyImageSharpFluid
         }
       }
