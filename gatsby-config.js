@@ -1,8 +1,13 @@
 module.exports = {
   pathPrefix: "/gesias",
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Gesias",
+    siteUrl: "https://www.iglenube.com",
+    title: "Iglenube - Administra la información de tu iglesia",
+    titleTemplate: "%s · Iglenube",
+    description: "La app que necesitas para gestionar tu iglesia",
+    url: "https://www.iglenube.com", // No trailing slash allowed!
+    image: "/images/pc.png", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@iglenube",
   },
   plugins: [
     "gatsby-plugin-emotion",
