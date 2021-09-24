@@ -3,7 +3,7 @@ import * as React from "react";
 const Hero = () => {
   return (
     <div className="container grid mx-auto h-5/6 sm:grid-cols-2 sm:gap-10 place-items-center">
-      <h1 className="px-3 py-6 mb-2 text-4xl font-bold text-gray-800 sm:text-5xl sm:p-20 xl:text-8xl md:text-6xl">
+      <h1 className="px-3 py-6 mb-2 text-4xl font-bold text-gray-800 sm:text-5xl sm:p-20 lg:text-7xl 2xl:text-8xl md:text-6xl">
         La app que necesitas para gestionar tu iglesia
       </h1>
       <div
