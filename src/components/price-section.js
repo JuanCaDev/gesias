@@ -67,7 +67,7 @@ const PriceSection = () => {
         <div className="flex justify-center gap-1 my-6 sm:gap-2">
           <label
             className={`
-              ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full "}
+              ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full cursor-pointer "}
               ${checkedValue === "month" ? "bg-blue text-white" : ""}
             `}
             for="month"
@@ -85,7 +85,7 @@ const PriceSection = () => {
 
           <label
             className={`
-              ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full "}
+              ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full cursor-pointer "}
               ${checkedValue === "biannual" ? "bg-blue text-white" : ""}
             `}
             for="biannual"
@@ -103,7 +103,7 @@ const PriceSection = () => {
 
           <label
             className={`
-              ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full "}
+              ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full cursor-pointer "}
               ${checkedValue === "annual" ? "bg-blue text-white" : ""}
             `}
             for="annual"

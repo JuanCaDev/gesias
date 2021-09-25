@@ -25,12 +25,12 @@ const IndexPage = ({ data }) => {
       <div
         style={{
           backgroundImage:
-            "linear-gradient(to bottom right, rgba(108, 86, 202, .4), rgba(33, 158, 188, .4), rgba(255, 255, 255, .4))",
+            "linear-gradient(to bottom right, rgba(108, 86, 202, .3), rgba(33, 158, 188, .3), rgba(255, 255, 255, .3))",
         }}
         className="h-screen"
       >
         <Header fluid={data.logo.childImageSharp.fluid} />
-        <Hero />
+        <Hero fluid={data.person.childImageSharp.fluid} />
       </div>
 
       <main className="text-blue">
@@ -51,7 +51,15 @@ export const query = graphql`
           ...GatsbyImageSharpFluid
         }
       }
-    }
+    },
+    person: file(relativePath: { eq: "person.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 320, maxHeight: 850) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    },
     pc: file(relativePath: { eq: "pc.png" }) {
       id
       childImageSharp {
