@@ -12,16 +12,19 @@ const Header = ({ fluid }) => {
           <Img fluid={fluid} alt="Logo Iglenube" />
         </div>
         <ul className="flex items-center gap-4">
-          <li className="font-semibold" onClick={() => scrollTo("#benefits")}>
-            <button>Beneficios</button>
+          <li className="font-semibold text-gray-dark" onClick={() => scrollTo("#benefits")}>
+            <button className="hover:underline">Beneficios</button>
           </li>
-          <li className="font-semibold" onClick={() => scrollTo("#price")}>
-            <button>Precios</button>
+          <li className="font-semibold text-gray-dark" onClick={() => scrollTo("#price")}>
+            <button className="hover:underline">Precios</button>
+          </li> 
+          <li className="font-semibold text-gray-dark" onClick={() => scrollTo("#contact")}>
+            <button className="hover:underline">Contacto</button>
           </li> 
           <li className="hidden sm:block">
             <button
               type="button"
-              className="px-2 py-1 font-semibold text-white rounded bg-blue"
+              className="px-2 py-1 font-semibold text-white rounded bg-blue-light"
             >
               Prueba gratuita
             </button>

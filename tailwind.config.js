@@ -9,7 +9,6 @@ module.exports = {
       blue: {
         light: "#219EBC",
         DEFAULT: "#023047",
-        dark: "#009eeb",
       },
       gray: {
         darkest: "#1f2d3d",
@@ -18,8 +17,13 @@ module.exports = {
         light: "#e0e6ed",
         lightest: "#f9fafc",
       },
+      purple: {
+        light: "#7D92EE",
+        DEFAULT: "#6C56CA",
+      },
+      pink: "#D47DEE",
       black: "#3D3D3D",
-      white: "#FFFFFF"
+      white: "#FFFFFF",
     },
   },
   variants: {

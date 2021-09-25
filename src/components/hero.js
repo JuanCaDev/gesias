@@ -3,9 +3,15 @@ import * as React from "react";
 const Hero = () => {
   return (
     <div className="container grid mx-auto h-5/6 sm:grid-cols-2 sm:gap-10 place-items-center">
-      <h1 className="px-3 py-6 mb-2 text-4xl font-bold text-gray-800 sm:text-5xl sm:p-20 lg:text-7xl 2xl:text-8xl md:text-6xl">
-        La app que necesitas para gestionar tu iglesia
-      </h1>
+      <div>
+        <h1 className="px-3 mb-2 text-4xl font-bold text-gray-800 sm:text-3xl sm:p-20 lg:text-5xl md:text-4xl">
+          Toda la información de tu iglesia a un clic
+        </h1>
+        <div className="relative">
+          <input type="text" className="rounded focus:outline-none" placeholder="Ingresa tu número" />
+          <button className="absolute px-2 py-1 font-semibold text-white rounded bg-blue-light right-0">Llámame</button>
+        </div>
+      </div>
       <div
         className="self-center px-3 py-6 justify-self-center sm:p-20"
         data-sal="slide-up"

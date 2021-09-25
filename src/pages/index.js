@@ -22,7 +22,13 @@ const IndexPage = ({ data }) => {
 
       <SEO />
 
-      <div className="h-screen bg-opacity-50 bg-gradient-to-b from-blue-light to-white text-blue">
+      <div
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom right, rgba(108, 86, 202, .4), rgba(33, 158, 188, .4), rgba(255, 255, 255, .4))",
+        }}
+        className="h-screen"
+      >
         <Header fluid={data.logo.childImageSharp.fluid} />
         <Hero />
       </div>
