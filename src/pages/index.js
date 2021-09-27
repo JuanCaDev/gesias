@@ -6,9 +6,14 @@ import Hero from "../components/hero";
 import BenefitsSection from "../components/benefits-section";
 import PriceSection from "../components/price-section";
 import SEO from "../components/seo";
+import SliderSection from "../components/slider-section";
+import { getImage } from "gatsby-plugin-image";
+import WeWorkSection from "../components/we-work-section";
 
 const IndexPage = ({ data }) => {
   console.log(data);
+
+  // const imageSlider = getImage(data.slider1.)
   return (
     <>
       <Helmet>
@@ -34,7 +39,9 @@ const IndexPage = ({ data }) => {
       </div>
 
       <main className="text-blue">
-        <BenefitsSection fluid={data.pc.childImageSharp.fluid} />
+        <SliderSection fluid={data.pc.childImageSharp.fluid} />
+      
+        <WeWorkSection />
 
         <PriceSection />
       </main>
@@ -66,6 +73,16 @@ export const query = graphql`
         fluid(maxWidth: 500, maxHeight: 300) {
           ...GatsbyImageSharpFluid
         }
+      }
+    },
+    slider1: file(relativePath: { eq: "slider-1.png" }) {
+      id
+      childImageSharp {
+        gatsbyImageData(
+          width: 781
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
       }
     }
   }
