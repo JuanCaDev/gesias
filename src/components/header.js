@@ -4,7 +4,6 @@ import scrollTo from "gatsby-plugin-smoothscroll";
 import Img from "gatsby-image";
 
 const Header = ({ fluid }) => {
-  console.log(fluid)
   return (
     <header>
       <nav className="flex items-center justify-between px-3 py-4 text-gray-800 sm:px-6">

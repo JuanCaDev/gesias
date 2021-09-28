@@ -1,48 +1,80 @@
 import * as React from "react";
+import SubtitleSection from "./subtitle-section";
 
 import TitleSection from "./title-section";
 
 const plans = [
   {
-    title: "Ayuda",
-    price: {
-      month: "$13 USD",
-      biannual: "$74 USD",
-      annual: "$140 USD",
-    },
-    description: "Si estás comenzando",
-    services: ["Servicio 1", "Servicio 2"],
+    title: "Jabes",
+    services: ["125 miembros", "10 células/grupos", "App móvil y web", "Soporte 24/7"],
+    prices: [
+      {
+        type: "mes",
+        price_usd: 13.00
+      },
+      {
+        type: "semestre",
+        price_usd: 74.00
+      },
+      {
+        type: "año",
+        price_usd: 140.00
+      },
+    ]
   },
   {
-    title: "Mini",
-    price: {
-      month: "$27 USD",
-      biannual: "$154 USD",
-      annual: "$292 USD",
-    },
-    description: "Recomendado si tienes algunos años de servicio",
-    services: ["Servicio 1", "Servicio 2"],
+    title: "Josue",
+    services: ["300 miembros", "30 células/grupos", "App móvil y web", "Soporte 24/7"],
+    prices: [
+      {
+        type: "mes",
+        price_usd: 27.00
+      },
+      {
+        type: "semestre",
+        price_usd: 154.00
+      },
+      {
+        type: "año",
+        price_usd: 292.00
+      },
+    ]
   },
   {
-    title: "Pro",
-    price: {
-      month: "$40 USD",
-      biannual: "$228 USD",
-      annual: "$432 USD",
-    },
-    description: "Especial para ti si cuentas con muchos miembros",
-    services: ["Servicio 1", "Servicio 2"],
+    title: "Moises",
+    services: ["750 miembros", "70 células/grupos", "App móvil y web", "Soporte 24/7"],
+    prices: [
+      {
+        type: "mes",
+        price_usd: 27.00
+      },
+      {
+        type: "semestre",
+        price_usd: 154.00
+      },
+      {
+        type: "año",
+        price_usd: 292.00
+      },
+    ]
   },
   {
-    title: "Pro plus",
-    price: {
-      month: "$60 USD",
-      biannual: "$342 USD",
-      annual: "$648 USD",
-    },
-    description:
-      "Especial para ti si cuentas con muchos miembros y mucha información para mantener en línea",
-    services: ["Servicio 1", "Servicio 2"],
+    title: "David",
+    services: ["2000 miembros", "1000 células/grupos", "App móvil y web", "Soporte 24/7"],
+    prices: [
+      {
+        type: "mes",
+        price_usd: 60.00
+      },
+      {
+        type: "semestre",
+        price_usd: 228.00
+      },
+      {
+        type: "año",
+        price_usd: 648.00
+      },
+    ]
   },
 ];
 
@@ -50,7 +82,6 @@ const PriceSection = () => {
   const [checkedValue, setCheckedValue] = React.useState("month");
 
   const handleCheck = ({ target }) => {
-    console.log(target.value);
     setCheckedValue(target.value);
   };
   return (
@@ -62,15 +93,16 @@ const PriceSection = () => {
       id="price"
     >
       <div className="container mx-auto">
-        <TitleSection>Nuestros precios</TitleSection>
+        <SubtitleSection>Tabla de precios</SubtitleSection>
+        <TitleSection>Hay una opción para tu iglesia</TitleSection>
 
-        <div className="flex justify-center gap-1 my-6 sm:gap-2">
+        {/* <div className="flex justify-center gap-1 my-6 sm:gap-2">
           <label
             className={`
               ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full cursor-pointer "}
               ${checkedValue === "month" ? "bg-blue text-white" : ""}
             `}
-            for="month"
+            htmlForm="month"
           >
             <input
               id="month"
@@ -88,7 +120,7 @@ const PriceSection = () => {
               ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full cursor-pointer "}
               ${checkedValue === "biannual" ? "bg-blue text-white" : ""}
             `}
-            for="biannual"
+            htmlForm="biannual"
           >
             <input
               id="biannual"
@@ -106,7 +138,7 @@ const PriceSection = () => {
               ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full cursor-pointer "}
               ${checkedValue === "annual" ? "bg-blue text-white" : ""}
             `}
-            for="annual"
+            htmlForm="annual"
           >
             <input
               id="annual"
@@ -118,25 +150,35 @@ const PriceSection = () => {
             />
             <span className="ml-2">Anual</span>
           </label>
-        </div>
+        </div> */}
 
-        <div class="grid sm:grid-cols-4 sm:my-12 gap-1">
+        <div class="grid sm:grid-cols-4 sm:my-12 gap-2">
           {plans.map((plan, index) => (
             <>
               {index === 2 ? (
-                <div className="px-4 py-5 text-center text-white rounded-md bg-blue-light">
-                  <h3 className="text-lg font-semibold">{plan.title}</h3>
-                  <p className="my-2 text-4xl font-semibold">
-                    {plan.price[checkedValue]}
-                  </p>
-                  <p className="h-12 mb-4 text-sm text-gray-100">
-                    {plan.description}
-                  </p>
-                  {/* <ul className="mt-4 divide-y">
-                    {plan.services.map((service) => (
-                      <li className="p-3">{service}</li>
+                <div className="px-4 py-6 text-center text-white rounded-md bg-blue-light" key={index}>
+                  <div className="grid grid-cols-2 gap-4" style={{ gridTemplateColumns: "auto 1fr" }}>
+                    <div>
+                      <small className="text-gray">Plan</small>
+                      <h3 className="text-2xl font-semibold">{plan.title}</h3>
+                    </div>
+                    <div>
+                      <ul className="text-sm text-left text-gray-lightest">
+                        {plan.services.map((service, index) => (
+                          <li key={index}>{ service }</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>  
+
+                  <ul className="mt-6 text-left text-white">
+                    {plan?.prices?.map((price, index) => (
+                      <li key={index}>
+                        {price.price_usd} usd <span className="text-sm text-gray">/{price.type}</span>
+                      </li>
                     ))}
-                  </ul> */}
+                  </ul>
+                  
                   <button
                     type="button"
                     className="w-full px-8 py-2 mt-8 font-semibold bg-white rounded text-blue"
@@ -145,19 +187,29 @@ const PriceSection = () => {
                   </button>
                 </div>
               ) : (
-                <div className="px-4 py-5 text-center bg-white rounded-md">
-                  <h3 className="text-lg font-semibold">{plan.title}</h3>
-                  <p className="my-2 text-4xl font-semibold">
-                    {plan.price[checkedValue]}
-                  </p>
-                  <p className="h-12 mb-4 text-sm text-gray-600">
-                    {plan.description}
-                  </p>
-                  {/* <ul className="mt-4 divide-y">
-                    {plan.services.map((service) => (
-                      <li className="p-3">{service}</li>
+                <div className="px-4 py-6 text-center bg-white rounded-md" key={index}>
+                  <div className="grid grid-cols-2 gap-4" style={{ gridTemplateColumns: "auto 1fr" }}>
+                    <div>
+                      <small className="text-gray">Plan</small>
+                      <h3 className="text-2xl font-semibold">{plan.title}</h3>
+                    </div>
+                    <div>
+                      <ul className="text-sm text-left text-gray-dark">
+                        {plan.services.map((service, index) => (
+                          <li key={index}>{ service }</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>  
+                  
+                  <ul className="mt-6 text-left text-gray-dark">
+                    {plan?.prices?.map((price, index) => (
+                      <li key={index}>
+                        {price.price_usd} usd <span className="text-sm text-gray">/{price.type}</span>
+                      </li>
                     ))}
-                  </ul> */}
+                  </ul>
+                  
                   <button
                     type="button"
                     className="w-full px-8 py-2 mt-8 font-semibold text-white rounded bg-blue"

@@ -3,17 +3,13 @@ import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import Header from "../components/header";
 import Hero from "../components/hero";
-import BenefitsSection from "../components/benefits-section";
 import PriceSection from "../components/price-section";
 import SEO from "../components/seo";
 import SliderSection from "../components/slider-section";
-import { getImage } from "gatsby-plugin-image";
 import WeWorkSection from "../components/we-work-section";
+import Footer from "../components/footer";
 
 const IndexPage = ({ data }) => {
-  console.log(data);
-
-  // const imageSlider = getImage(data.slider1.)
   return (
     <>
       <Helmet>
@@ -44,6 +40,10 @@ const IndexPage = ({ data }) => {
         <WeWorkSection />
 
         <PriceSection />
+
+        {/* <ContactSection /> */}
+        
+        <Footer />
       </main>
     </>
   );
