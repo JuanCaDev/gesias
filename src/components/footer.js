@@ -8,7 +8,7 @@ import IconYoutube from "../assets/youtube.svg";
 const Footer = () => {
   return (
     <section
-      class="px-3 py-6"      
+      className="px-3 py-6"      
       id="we-work"
     >
       <div

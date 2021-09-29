@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+
 import Header from "../components/header";
 import Hero from "../components/hero";
 import PriceSection from "../components/price-section";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import SliderSection from "../components/slider-section";
 import WeWorkSection from "../components/we-work-section";
 import Footer from "../components/footer";
@@ -21,7 +23,7 @@ const IndexPage = ({ data }) => {
         />
       </Helmet>
 
-      <SEO />
+      <Seo />
 
       <div
         style={{
@@ -45,6 +47,11 @@ const IndexPage = ({ data }) => {
         
         <Footer />
       </main>
+
+      <MessengerCustomerChat
+        pageId="109064344858015"
+        appId="2334118380057982"
+      />,
     </>
   );
 };

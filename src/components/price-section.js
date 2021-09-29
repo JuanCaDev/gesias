@@ -36,7 +36,7 @@ const plans = [
       },
       {
         type: "año",
-        price_usd: 292.00
+        price_usd:  .00
       },
     ]
   },
@@ -46,15 +46,15 @@ const plans = [
     prices: [
       {
         type: "mes",
-        price_usd: 27.00
+        price_usd: 40.00
       },
       {
         type: "semestre",
-        price_usd: 154.00
+        price_usd: 228.00
       },
       {
         type: "año",
-        price_usd: 292.00
+        price_usd: 432.00
       },
     ]
   },
@@ -68,7 +68,7 @@ const plans = [
       },
       {
         type: "semestre",
-        price_usd: 228.00
+        price_usd: 342.00
       },
       {
         type: "año",
@@ -86,7 +86,7 @@ const PriceSection = () => {
   };
   return (
     <section
-      class="sm:py-12 bg-gray-lightest text-gray-800 px-3 py-6"
+      className="sm:py-12 bg-gray-lightest text-gray-800 px-3 py-6"
       data-sal="slide-up"
       data-sal-duration="600"
       data-sal-easing="ease-out-bounce"
@@ -152,7 +152,7 @@ const PriceSection = () => {
           </label>
         </div> */}
 
-        <div class="grid sm:grid-cols-4 sm:my-12 gap-2">
+        <div className="grid sm:grid-cols-4 mt-6 mb-3 sm:mt-12 sm:mb-6 gap-2">
           {plans.map((plan, index) => (
             <>
               {index === 2 ? (

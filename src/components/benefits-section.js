@@ -11,7 +11,7 @@ import IconLock from "../assets/lock-closed-outline.svg";
 const BenefitsSection = ({ fluid }) => {
   return (
     <section
-      class="container mx-auto sm:py-12 text-gray-800 px-3 py-6"
+      className="container px-3 py-6 mx-auto text-gray-800 sm:py-12"
       data-sal="slide-up"
       data-sal-duration="600"
       data-sal-easing="ease-out-bounce"
@@ -19,9 +19,9 @@ const BenefitsSection = ({ fluid }) => {
     >
       <TitleSection>Nuestros beneficios</TitleSection>
 
-      <div class="grid sm:grid-cols-2 place-items-center sm:my-12 my-6 sm:gap-20 gap-4">
+      <div className="grid gap-4 my-6 sm:grid-cols-2 place-items-center sm:my-12 sm:gap-20">
         <div>
-          <h3 class="text-2xl font-bold mb-2">Disponible para ti 24/7</h3>
+          <h3 className="mb-2 text-2xl font-bold">Disponible para ti 24/7</h3>
           <p>
             Iglenube es la plataforma digital para iglesias más completa del
             mercado. Con nuestro software podrás gestionar eventos, reuniones,
@@ -35,13 +35,13 @@ const BenefitsSection = ({ fluid }) => {
         </figure>
       </div>
 
-      <div class="grid sm:grid-cols-3 sm:gap-4 gap-2 container mx-auto sm:pt-10 pt-5">
+      <div className="container grid gap-2 pt-5 mx-auto sm:grid-cols-3 sm:gap-4 sm:pt-10">
         <article className="p-6 rounded bg-gray-lightest">
           <div className="flex items-center gap-3 mb-2">
-            <figure class="bg-blue-light bg-opacity-30 rounded-full p-2 w-max">
+            <figure className="p-2 rounded-full bg-blue-light bg-opacity-30 w-max">
               <IconPhone width={32} height={32} />
             </figure>
-            <h3 class="text-xl sm:mt-2 font-semibold">Multiplataforma</h3>
+            <h3 className="text-xl font-semibold sm:mt-2">Multiplataforma</h3>
           </div>
           <p>
             Te brindamos la facilidad de acceder desde cualquier dispositivo
@@ -50,10 +50,10 @@ const BenefitsSection = ({ fluid }) => {
 
         <article className="p-6 rounded bg-gray-lightest">
           <div className="flex items-center gap-3 mb-2">
-            <figure class="bg-blue-light bg-opacity-30 rounded-full p-2 w-max">
+            <figure className="p-2 rounded-full bg-blue-light bg-opacity-30 w-max">
               <IconAlbums width={32} height={32} />
             </figure>
-            <h3 class="text-xl sm:mt-2 font-semibold">Organización</h3>
+            <h3 className="text-xl font-semibold sm:mt-2">Organización</h3>
           </div>
           <p>
             Visualiza tu información detallada y organizada. Ahorrarás tiempo
@@ -62,10 +62,10 @@ const BenefitsSection = ({ fluid }) => {
 
         <article className="p-6 rounded bg-gray-lightest">
           <div className="flex items-center gap-3 mb-2">
-            <figure class="bg-blue-light bg-opacity-30 rounded-full p-2 w-max">
+            <figure className="p-2 rounded-full bg-blue-light bg-opacity-30 w-max">
               <IconLock width={32} height={32} />
             </figure>
-            <h3 class="text-xl sm:mt-2 font-semibold">Seguridad</h3>
+            <h3 className="text-xl font-semibold sm:mt-2">Seguridad</h3>
           </div>
           <p>Tus datos y los de tu comunidad están seguros con nosotros</p>
         </article>

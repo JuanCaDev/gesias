@@ -9,7 +9,7 @@ import TitleSection from "./title-section";
 const ContactSection = () => {
   return (
     <section
-      class="px-3 py-6 bg-gray-light"      
+      className="px-3 py-6 bg-gray-light"      
       id="we-work"
     >
       <TitleSection>¿Tienes dudas de nuestros planes o productos?</TitleSection>
@@ -21,7 +21,7 @@ const ContactSection = () => {
         // data-sal-duration="600"
         // data-sal-easing="ease-out-bounce"
       >
-        <div class="grid grid-cols-2 sm:grid-cols-3 place-items-center sm:gap-20 gap-4">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 place-items-center sm:gap-20">
           <IconEPayCo width={120} />
           <IconAws width={120} />
           <IconCloudFlare width={120} />
