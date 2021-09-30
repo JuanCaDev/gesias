@@ -185,6 +185,8 @@ const PriceSection = () => {
                   <button
                     type="button"
                     className="w-full px-8 py-2 mt-8 font-semibold bg-white rounded text-blue"
+                    href="https://dashboard.iglenube.com/registro"
+                    target="_blank"
                   >
                     Adquirir
                   </button>
@@ -225,6 +227,8 @@ const PriceSection = () => {
                       ["bg-purple"]: index === 2,
                       ["bg-blue-light"]: index === 3,
                     })}
+                    href="https://dashboard.iglenube.com/registro"
+                    target="_blank"
                   >
                     Adquirir
                   </button>

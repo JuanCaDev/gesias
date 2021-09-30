@@ -17,9 +17,9 @@ const Header = ({ fluid }) => {
           <li className="font-semibold text-gray-dark" onClick={() => scrollTo("#price")}>
             <button className="hover:underline">Precios</button>
           </li> 
-          <li className="font-semibold text-gray-dark" onClick={() => scrollTo("#contact")}>
+          {/* <li className="font-semibold text-gray-dark" onClick={() => scrollTo("#contact")}>
             <button className="hover:underline">Contacto</button>
-          </li> 
+          </li> */}
           <li className="hidden sm:block">
             <a
               type="button"
