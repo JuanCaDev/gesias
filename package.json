@@ -37,7 +37,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-messenger-customer-chat": "^0.8.0"
+    "react-messenger-customer-chat": "^0.8.0",
+    "react-toastify": "^8.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.3",

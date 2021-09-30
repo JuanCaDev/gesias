@@ -24,10 +24,13 @@ module.exports = {
       pink: "#D47DEE",
       black: "#3D3D3D",
       white: "#FFFFFF",
+      red: "#EF4444"
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ['disabled']
+    },
   },
   plugins: [],
 };

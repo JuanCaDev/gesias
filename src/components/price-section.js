@@ -155,7 +155,7 @@ const PriceSection = () => {
           </label>
         </div> */}
 
-        <div className="grid gap-2 mt-6 mb-3 sm:grid-cols-4 sm:mt-12 sm:mb-6">
+        <div className="grid gap-2 mt-6 mb-3 lg:grid-cols-4 sm:mt-12 sm:mb-6 sm:grid-cols-2">
           {plans.map((plan, index) => (
             <>
               {index === 1 ? (

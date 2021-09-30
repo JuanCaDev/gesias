@@ -1,28 +1,61 @@
 import * as React from "react";
 
 import Img from "gatsby-image";
+import { toast } from 'react-toastify';
+import cn from "classnames";
+
 import IconAttendance from "../assets/attendance.svg";
 import IconCellsGroups from "../assets/cells-groups.svg";
 
 const Hero = ({ fluid }) => {
-  const [number, setNumber] = React.useState(undefined)
+  const [number, setNumber] = React.useState("")
+  const [error, setError] = React.useState("")
+  const [loading, setLoading] = React.useState(false)
 
   const handleChange = ({ target }) => {
-    setNumber(target.number)
+    setNumber(target.value)
   }
 
-  const handleClick = async () => {
-    const response = await fetch("http://dashboard.iglenube.com/llamame", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        telefono: number
-      })
-    })
+  const handleSubmit = async (e) => {
+    e.preventDefault()
 
-    console.log(response.json())
+    try {
+      if (!number) {
+        throw { message: "Escribe un número valido" }
+      } else if (number.trim().length < 6 || number.trim().length > 14) {
+        throw { message: "Verifica tu número de contacto" }
+      }
+
+      setLoading(true)
+      
+      const response = await fetch("https://dashboard.iglenube.com/api/llamame", {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          telefono: number
+        })
+      })
+  
+      const data = await response.json()
+      
+      toast.info(data.message, {
+        icon: "📞",
+        autoClose: 10000,
+      });
+      
+      setError("")
+      setTimeout(() => {
+        setLoading(false)
+        setNumber("")
+      }, 1000)
+    } catch (err) {
+      setError(err.message)
+      setLoading(false)
+    }
+    
   }
   
   return (
@@ -32,19 +65,31 @@ const Hero = ({ fluid }) => {
           Toda la información de tu iglesia a un clic
         </h1>
         <div className="relative">
-          <input
-            type="number"
-            className="w-full px-4 py-3 rounded focus:outline-none"
-            placeholder="Ingresa tu número"
-            onChange={handleChange}
-          />
-          <button
-            className="absolute px-2 py-1 font-semibold text-white rounded right-2 top-2 bg-blue-light"
-            type="button"
-            onClick={handleClick}
-          >
-            Llámame
-          </button>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="tel"
+              className={cn("w-full px-4 py-3 border rounded focus:outline-none", {
+                ["border-white"]: !error,
+                ["border-red"]: error,
+                ["bg-gray-lightest cursor-wait"]: loading,
+              })}
+              disabled={loading}
+              placeholder="Ingresa tu número"
+              onChange={handleChange}
+              value={number}
+            />
+            <button
+              className={cn("absolute px-2 py-1 font-semibold text-white rounded right-2 top-2 bg-blue-light", {
+                ["opacity-50 cursor-wait"]: loading,
+              })}
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Enviando" : "Llámame"}
+              
+            </button>
+            <p className="h-4 text-sm text-red">{error}</p>
+          </form>
         </div>
       </div>
       <div className="relative">

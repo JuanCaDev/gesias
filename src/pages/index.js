@@ -11,6 +11,9 @@ import SliderSection from "../components/slider-section";
 import WeWorkSection from "../components/we-work-section";
 import Footer from "../components/footer";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const IndexPage = ({ data }) => {
   return (
     <>
@@ -52,7 +55,9 @@ const IndexPage = ({ data }) => {
         pageId="109064344858015"
         appId="2334118380057982"
         language="es_CO"
-      />,
+      />
+
+      <ToastContainer /> 
     </>
   );
 };
