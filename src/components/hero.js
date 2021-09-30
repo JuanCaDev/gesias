@@ -26,8 +26,8 @@ const Hero = ({ fluid }) => {
   }
   
   return (
-    <div className="container grid mx-auto h-5/6 sm:grid-cols-2 sm:gap-10">
-      <div className="px-3 mt-4 sm:p-20">
+    <div className="container grid mx-auto h-5/6 sm:grid-cols-2 lg:gap-10">
+      <div className="px-3 mt-4 lg:p-20 md:pt-16">
         <h1 className="mb-4 text-3xl font-semibold text-gray-800 sm:mb-8 lg:text-5xl md:text-4xl">
           Toda la información de tu iglesia a un clic
         </h1>
@@ -54,7 +54,7 @@ const Hero = ({ fluid }) => {
         >
           <Img fluid={fluid} alt="Persona usando Iglenube en un iPad" />
         </figure>
-        <div className="absolute flex gap-2 px-4 py-2 bg-white rounded-lg shadow-xl sm:bottom-40 sm:left-32 bottom-16 left-6">
+        <div className="absolute flex gap-2 px-4 py-3 bg-white rounded-lg shadow-xl sm:bottom-40 lg:left-28 sm:left-16 bottom-16 left-6">
           <div className="p-2 rounded-full bg-blue-light">
             <IconAttendance width={24} height={24} />
           </div>
@@ -63,7 +63,7 @@ const Hero = ({ fluid }) => {
             <p className="text-sm text-gray-dark">Finanzas</p>
           </div>
         </div>
-        <div className="absolute flex gap-2 px-4 py-2 bg-white rounded-lg shadow-xl sm:bottom-64 sm:right-32 bottom-40 right-6">
+        <div className="absolute flex gap-2 px-4 py-3 bg-white rounded-lg shadow-xl w-max sm:bottom-64 lg:right-28 sm:right-16 bottom-40 right-6">
           <div className="p-2 rounded-full bg-blue-light">
             <IconCellsGroups width={24} height={24} />
           </div>
