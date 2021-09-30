@@ -21,12 +21,14 @@ const Header = ({ fluid }) => {
             <button className="hover:underline">Contacto</button>
           </li> 
           <li className="hidden sm:block">
-            <button
+            <a
               type="button"
               className="px-2 py-1 font-semibold text-white rounded bg-blue-light"
+              href="https://dashboard.iglenube.com/registro"
+              target="_blank"
             >
               Prueba gratuita
-            </button>
+            </a>
           </li>
         </ul>
       </nav>

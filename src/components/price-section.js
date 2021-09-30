@@ -3,6 +3,9 @@ import SubtitleSection from "./subtitle-section";
 
 import TitleSection from "./title-section";
 
+import IconEPayCo from "../assets/epayco.svg";
+import cn from "classnames";
+
 const plans = [
   {
     title: "Jabes",
@@ -36,7 +39,7 @@ const plans = [
       },
       {
         type: "año",
-        price_usd:  .00
+        price_usd: 200.00
       },
     ]
   },
@@ -86,7 +89,7 @@ const PriceSection = () => {
   };
   return (
     <section
-      className="sm:py-12 bg-gray-lightest text-gray-800 px-3 py-6"
+      className="px-3 py-6 text-gray-800 sm:py-12 bg-gray-lightest"
       data-sal="slide-up"
       data-sal-duration="600"
       data-sal-easing="ease-out-bounce"
@@ -152,11 +155,11 @@ const PriceSection = () => {
           </label>
         </div> */}
 
-        <div className="grid sm:grid-cols-4 mt-6 mb-3 sm:mt-12 sm:mb-6 gap-2">
+        <div className="grid gap-2 mt-6 mb-3 sm:grid-cols-4 sm:mt-12 sm:mb-6">
           {plans.map((plan, index) => (
             <>
-              {index === 2 ? (
-                <div className="px-4 py-6 text-center text-white rounded-md bg-blue-light" key={index}>
+              {index === 1 ? (
+                <div className="px-4 py-6 text-center text-white rounded-md shadow-lg bg-purple" key={index}>
                   <div className="grid grid-cols-2 gap-4" style={{ gridTemplateColumns: "auto 1fr" }}>
                     <div>
                       <small className="text-gray">Plan</small>
@@ -185,9 +188,14 @@ const PriceSection = () => {
                   >
                     Adquirir
                   </button>
+
+                  <div className="flex flex-col items-center mt-3">
+                    <span className="mb-1 text-sm text-gray">Paga seguro con</span>
+                    <IconEPayCo width={64} height={30} />
+                  </div>
                 </div>
               ) : (
-                <div className="px-4 py-6 text-center bg-white rounded-md" key={index}>
+                <div className="px-4 py-6 text-center bg-white rounded-md shadow-lg" key={index}>
                   <div className="grid grid-cols-2 gap-4" style={{ gridTemplateColumns: "auto 1fr" }}>
                     <div>
                       <small className="text-gray">Plan</small>
@@ -212,10 +220,19 @@ const PriceSection = () => {
                   
                   <button
                     type="button"
-                    className="w-full px-8 py-2 mt-8 font-semibold text-white rounded bg-blue"
+                    className={cn("w-full px-8 py-2 mt-8 font-semibold text-white rounded", {
+                      ["bg-pink"]: index === 0,
+                      ["bg-purple"]: index === 2,
+                      ["bg-blue-light"]: index === 3,
+                    })}
                   >
                     Adquirir
                   </button>
+                  
+                  <div className="flex flex-col items-center mt-3">
+                    <span className="mb-1 text-sm text-gray">Paga seguro con</span>
+                    <IconEPayCo width={64} height={30} />
+                  </div>
                 </div>
               )}
             </>
