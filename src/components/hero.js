@@ -22,7 +22,7 @@ const Hero = ({ fluid }) => {
     try {
       if (!number) {
         throw { message: "Escribe un número valido" }
-      } else if (number.trim().length < 6 || number.trim().length > 14) {
+      } else if (number.trim().length < 6 || number.trim().length > 22) {
         throw { message: "Verifica tu número de contacto" }
       }
 
@@ -77,6 +77,9 @@ const Hero = ({ fluid }) => {
               placeholder="Ingresa tu número"
               onChange={handleChange}
               value={number}
+              required
+              minLength={6}
+              maxLength={23}
             />
             <button
               className={cn("absolute px-2 py-1 font-semibold text-white rounded right-2 top-2 bg-blue-light", {
