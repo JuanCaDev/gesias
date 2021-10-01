@@ -64,6 +64,7 @@ const Hero = ({ fluid }) => {
         <h1 className="mb-4 text-3xl font-semibold text-gray-800 sm:mb-8 lg:text-5xl md:text-4xl">
           Toda la información de tu iglesia a un clic
         </h1>
+        <p className="mb-1 text-sm text-gray-dark sm:text-base">Déjanos tu número de contacto y te contamos más</p>
         <div className="relative">
           <form onSubmit={handleSubmit}>
             <input
