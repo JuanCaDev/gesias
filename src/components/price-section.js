@@ -183,12 +183,12 @@ const PriceSection = () => {
                   </ul>
                   
                   <a
-                    type="button"
-                    className="w-full px-8 py-2 mt-8 font-semibold bg-white rounded text-blue"
                     href="https://dashboard.iglenube.com/registro"
                     target="_blank"
                   >
-                    Adquirir
+                    <button className="w-full px-8 py-2 mt-8 font-semibold bg-white rounded text-blue">
+                      Adquirir
+                    </button>
                   </a>
 
                   <div className="flex flex-col items-center mt-3">
@@ -221,16 +221,16 @@ const PriceSection = () => {
                   </ul>
                   
                   <a
-                    type="button"
-                    className={cn("w-full px-8 py-2 mt-8 font-semibold text-white rounded", {
-                      ["bg-pink"]: index === 0,
-                      ["bg-purple"]: index === 2,
-                      ["bg-blue-light"]: index === 3,
-                    })}
                     href="https://dashboard.iglenube.com/registro"
                     target="_blank"
                   >
-                    Adquirir
+                    <button className={cn("w-full px-8 py-2 mt-8 font-semibold text-white rounded", {
+                      ["bg-pink"]: index === 0,
+                      ["bg-purple"]: index === 2,
+                      ["bg-blue-light"]: index === 3,
+                    })}>
+                      Adquirir
+                    </button>
                   </a>
                   
                   <div className="flex flex-col items-center mt-3">

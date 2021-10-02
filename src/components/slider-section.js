@@ -50,7 +50,7 @@ const SliderSection = () => {
         // data-sal-duration="600"
         // data-sal-easing="ease-out-bounce"
       >
-        <div className="absolute top-0 flex gap-3 left-3">
+        <div className="absolute top-0 flex gap-3 left-3 sm:left-14">
           {slides.map((_, index) => (
             <button
               className={cn("p-3 bg-white rounded-full", {

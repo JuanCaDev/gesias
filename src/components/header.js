@@ -23,11 +23,12 @@ const Header = ({ fluid }) => {
           <li className="hidden sm:block">
             <a
               type="button"
-              className="px-2 py-1 font-semibold text-white rounded bg-blue-light"
               href="https://dashboard.iglenube.com/registro"
               target="_blank"
             >
-              Prueba gratuita
+              <button className="px-2 py-1 font-semibold text-white rounded bg-blue-light">
+                Prueba gratuita
+              </button>
             </a>
           </li>
         </ul>
