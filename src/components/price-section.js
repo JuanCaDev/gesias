@@ -159,7 +159,7 @@ const PriceSection = () => {
           {plans.map((plan, index) => (
             <>
               {index === 1 ? (
-                <div className="px-4 py-6 text-center text-white shadow-lg rounded-xl bg-purple" key={index}>
+                <div className="p-6 text-center text-white shadow-lg rounded-xl bg-purple" key={index}>
                   <div className="grid grid-cols-2 gap-4" style={{ gridTemplateColumns: "auto 1fr" }}>
                     <div>
                       <small className="text-gray">Plan</small>
@@ -197,7 +197,7 @@ const PriceSection = () => {
                   </div>
                 </div>
               ) : (
-                <div className="px-4 py-6 text-center bg-white shadow-lg rounded-xl" key={index}>
+                <div className="p-6 text-center bg-white shadow-lg rounded-xl" key={index}>
                   <div className="grid grid-cols-2 gap-4" style={{ gridTemplateColumns: "auto 1fr" }}>
                     <div>
                       <small className="text-gray">Plan</small>
