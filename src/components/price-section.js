@@ -159,7 +159,7 @@ const PriceSection = () => {
           {plans.map((plan, index) => (
             <>
               {index === 1 ? (
-                <div className="px-4 py-6 text-center text-white rounded-md shadow-lg bg-purple" key={index}>
+                <div className="px-4 py-6 text-center text-white shadow-lg rounded-xl bg-purple" key={index}>
                   <div className="grid grid-cols-2 gap-4" style={{ gridTemplateColumns: "auto 1fr" }}>
                     <div>
                       <small className="text-gray">Plan</small>
@@ -177,19 +177,19 @@ const PriceSection = () => {
                   <ul className="mt-6 text-left text-white">
                     {plan?.prices?.map((price, index) => (
                       <li key={index}>
-                        {price.price_usd} usd <span className="text-sm text-gray">/{price.type}</span>
+                        <span className="text-lg">{price.price_usd} usd</span> <span className="text-sm text-gray">/{price.type}</span>
                       </li>
                     ))}
                   </ul>
                   
-                  <button
+                  <a
                     type="button"
                     className="w-full px-8 py-2 mt-8 font-semibold bg-white rounded text-blue"
                     href="https://dashboard.iglenube.com/registro"
                     target="_blank"
                   >
                     Adquirir
-                  </button>
+                  </a>
 
                   <div className="flex flex-col items-center mt-3">
                     <span className="mb-1 text-sm text-gray">Paga seguro con</span>
@@ -197,7 +197,7 @@ const PriceSection = () => {
                   </div>
                 </div>
               ) : (
-                <div className="px-4 py-6 text-center bg-white rounded-md shadow-lg" key={index}>
+                <div className="px-4 py-6 text-center bg-white shadow-lg rounded-xl" key={index}>
                   <div className="grid grid-cols-2 gap-4" style={{ gridTemplateColumns: "auto 1fr" }}>
                     <div>
                       <small className="text-gray">Plan</small>
@@ -215,12 +215,12 @@ const PriceSection = () => {
                   <ul className="mt-6 text-left text-gray-dark">
                     {plan?.prices?.map((price, index) => (
                       <li key={index}>
-                        {price.price_usd} usd <span className="text-sm text-gray">/{price.type}</span>
+                        <span className="text-lg">{price.price_usd} usd</span> <span className="text-sm text-gray">/{price.type}</span>
                       </li>
                     ))}
                   </ul>
                   
-                  <button
+                  <a
                     type="button"
                     className={cn("w-full px-8 py-2 mt-8 font-semibold text-white rounded", {
                       ["bg-pink"]: index === 0,
@@ -231,7 +231,7 @@ const PriceSection = () => {
                     target="_blank"
                   >
                     Adquirir
-                  </button>
+                  </a>
                   
                   <div className="flex flex-col items-center mt-3">
                     <span className="mb-1 text-sm text-gray">Paga seguro con</span>

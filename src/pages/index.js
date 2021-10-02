@@ -10,6 +10,7 @@ import Seo from "../components/seo";
 import SliderSection from "../components/slider-section";
 import WeWorkSection from "../components/we-work-section";
 import Footer from "../components/footer";
+import ContactSection from "../components/contact-section";
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -46,7 +47,7 @@ const IndexPage = ({ data }) => {
 
         <PriceSection />
 
-        {/* <ContactSection /> */}
+        <ContactSection />
         
         <Footer />
       </main>

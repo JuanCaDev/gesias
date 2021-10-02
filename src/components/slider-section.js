@@ -50,7 +50,7 @@ const SliderSection = () => {
         // data-sal-duration="600"
         // data-sal-easing="ease-out-bounce"
       >
-        <div className="absolute top-0 flex gap-3 left-10">
+        <div className="absolute top-0 flex gap-3 left-3">
           {slides.map((_, index) => (
             <button
               className={cn("p-3 bg-white rounded-full", {
@@ -66,7 +66,7 @@ const SliderSection = () => {
         </div>
         
         <div
-          className="flex px-10 overflow-hidden pt-14 md:pt-0"
+          className="flex px-3 overflow-hidden pt-14 md:pt-0"
           style={{ scrollSnapType: "x mandatory" }}
           ref={slider}
         >
