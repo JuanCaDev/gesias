@@ -82,11 +82,8 @@ const plans = [
 ];
 
 const PriceSection = () => {
-  const [checkedValue, setCheckedValue] = React.useState("month");
+  const [switchActive, setSwitchActive] = React.useState(false);
 
-  const handleCheck = ({ target }) => {
-    setCheckedValue(target.value);
-  };
   return (
     <section
       className="px-3 py-6 text-gray-800 sm:py-12 bg-gray-lightest"
@@ -99,63 +96,27 @@ const PriceSection = () => {
         <SubtitleSection>Tabla de precios</SubtitleSection>
         <TitleSection>Hay una opción para tu iglesia</TitleSection>
 
-        {/* <div className="flex justify-center gap-1 my-6 sm:gap-2">
-          <label
-            className={`
-              ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full cursor-pointer "}
-              ${checkedValue === "month" ? "bg-blue text-white" : ""}
-            `}
-            htmlForm="month"
+        <div className="flex items-center justify-center gap-4 mt-5">
+          <span className={cn("font-semibold", {
+            ["text-gray-dark"]: !switchActive,
+            ["text-gray"]: switchActive,
+          })}>Independiente</span>
+          <button
+            class="bg-purple-light bg-opacity-50 rounded-full w-14"
+            id="switch"
+            onClick={() => setSwitchActive(!switchActive)}
           >
-            <input
-              id="month"
-              type="radio"
-              name="price"
-              value="month"
-              onChange={handleCheck}
-              checked={checkedValue === "month" ? true : false}
-            />
-            <span className="ml-2">Mensual</span>
-          </label>
+            <div className={cn("w-6 h-6 m-1 transform transition-transform rounded-full bg-purple", {
+              ["translate-x-6"]: switchActive
+            })}></div>
+          </button>
+          <span className={cn("font-semibold", {
+            ["text-gray-dark"]: switchActive,
+            ["text-gray"]: !switchActive,
+          })}>Organización</span>
+        </div>
 
-          <label
-            className={`
-              ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full cursor-pointer "}
-              ${checkedValue === "biannual" ? "bg-blue text-white" : ""}
-            `}
-            htmlForm="biannual"
-          >
-            <input
-              id="biannual"
-              type="radio"
-              name="price"
-              value="biannual"
-              onChange={handleCheck}
-              checked={checkedValue === "biannual" ? true : false}
-            />
-            <span className="ml-2">Semestral</span>
-          </label>
-
-          <label
-            className={`
-              ${"text-center flex items-center py-2 px-3 border-2 border-blue rounded-full cursor-pointer "}
-              ${checkedValue === "annual" ? "bg-blue text-white" : ""}
-            `}
-            htmlForm="annual"
-          >
-            <input
-              id="annual"
-              type="radio"
-              name="price"
-              value="annual"
-              onChange={handleCheck}
-              checked={checkedValue === "annual" ? true : false}
-            />
-            <span className="ml-2">Anual</span>
-          </label>
-        </div> */}
-
-        <div className="grid gap-2 mt-6 mb-3 lg:grid-cols-4 sm:mt-12 sm:mb-6 sm:grid-cols-2">
+        <div className="grid gap-2 mt-5 mb-3 lg:grid-cols-4 sm:mt-12 sm:mb-6 sm:grid-cols-2">
           {plans.map((plan, index) => (
             <>
               {index === 1 ? (
@@ -186,7 +147,7 @@ const PriceSection = () => {
                     href="https://dashboard.iglenube.com/registro"
                     target="_blank"
                   >
-                    <button className="w-full px-8 py-2 mt-8 font-semibold bg-white rounded text-blue">
+                    <button className="w-full px-8 py-2 mt-8 font-semibold bg-white rounded shadow hover:shadow-none text-blue">
                       Adquirir
                     </button>
                   </a>
@@ -201,7 +162,7 @@ const PriceSection = () => {
                   <div className="grid grid-cols-2 gap-4" style={{ gridTemplateColumns: "auto 1fr" }}>
                     <div>
                       <small className="text-gray">Plan</small>
-                      <h3 className="text-2xl font-semibold">{plan.title}</h3>
+                      <h3 className="text-2xl font-semibold text-blue">{plan.title}</h3>
                     </div>
                     <div>
                       <ul className="text-sm text-left text-gray-dark">
@@ -224,7 +185,7 @@ const PriceSection = () => {
                     href="https://dashboard.iglenube.com/registro"
                     target="_blank"
                   >
-                    <button className={cn("w-full px-8 py-2 mt-8 font-semibold text-white rounded", {
+                    <button className={cn("w-full px-8 py-2 mt-8 font-semibold text-white rounded shadow hover:shadow-none", {
                       ["bg-pink"]: index === 0,
                       ["bg-purple"]: index === 2,
                       ["bg-blue-light"]: index === 3,

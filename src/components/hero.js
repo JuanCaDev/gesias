@@ -61,7 +61,7 @@ const Hero = ({ fluid }) => {
   return (
     <div className="container grid mx-auto h-5/6 sm:grid-cols-2 lg:gap-10">
       <div className="px-3 mt-4 lg:p-20 md:pt-16">
-        <h1 className="mb-4 text-3xl font-semibold text-gray-800 sm:mb-8 lg:text-5xl md:text-4xl">
+        <h1 className="mb-4 text-3xl font-bold text-blue sm:mb-8 lg:text-5xl md:text-4xl">
           Toda la información de tu iglesia a un clic
         </h1>
         <p className="mb-1 text-sm text-gray-dark sm:text-base">Déjanos tu número de contacto y te contamos más</p>
@@ -69,7 +69,7 @@ const Hero = ({ fluid }) => {
           <form onSubmit={handleSubmit}>
             <input
               type="tel"
-              className={cn("w-full px-4 py-3 border rounded focus:outline-none", {
+              className={cn("w-full px-4 py-3 border rounded focus:outline-none shadow", {
                 ["border-white"]: !error,
                 ["border-red"]: error,
                 ["bg-gray-lightest cursor-wait"]: loading,
