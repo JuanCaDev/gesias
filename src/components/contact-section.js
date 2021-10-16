@@ -10,7 +10,7 @@ import TitleSection from "./title-section";
 const ContactSection = () => {
   return (
     <section
-      className="px-3 py-6 bg-gray-light"      
+      className="px-3 py-6 bg-gray-light sm:py-12"      
       id="we-work"
     >
       <TitleSection>¿Tienes dudas de nuestros planes o productos?</TitleSection>

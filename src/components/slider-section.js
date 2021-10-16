@@ -32,7 +32,7 @@ const SliderSection = () => {
     if (index !== 0) {
       left = slider.current.offsetWidth
     }
-    console.log(left * index)
+    
     slider.current.scrollTo({
       left: left * index,
       behavior: "smooth"
