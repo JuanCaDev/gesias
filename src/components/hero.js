@@ -59,8 +59,8 @@ const Hero = ({ fluid }) => {
   }
   
   return (
-    <div className="container grid mx-auto h-5/6 sm:grid-cols-2 lg:gap-10">
-      <div className="px-3 mt-4 lg:p-20 md:pt-16">
+    <div className="container grid items-center gap-2 mx-auto mt-4 h-5/6 sm:grid-cols-2 lg:gap-10 md:items-baseline md:gap-0 md:mt-0">
+      <div className="px-3 md:mt-4 lg:p-20 md:pt-16">
         <h1 className="mb-4 text-3xl font-bold text-blue sm:mb-8 lg:text-5xl md:text-4xl">
           Toda la información de tu iglesia a un clic
         </h1>
@@ -96,10 +96,10 @@ const Hero = ({ fluid }) => {
           </form>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative self-center">
         <figure
           style={{ maxWidth: 320 }}
-          className="w-32 mx-auto mt-4 ma3x-w-xs sm:w-52"
+          className="max-w-xs mx-auto w-36 sm:w-52 lg:w-60"
         >
           <Img fluid={fluid} alt="Persona usando Iglenube en un iPad" />
         </figure>

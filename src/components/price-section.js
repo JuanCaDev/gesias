@@ -5,12 +5,13 @@ import TitleSection from "./title-section";
 
 import IconEPayCo from "../assets/epayco.svg";
 import cn from "classnames";
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const typePlans = [
   [
     {
       title: "Jabes",
-      services: ["125 miembros", "10 células/grupos", "App móvil y web", "Soporte 24/7"],
+      services: ["12 miembros", "10 células/grupos", "App móvil y web", "Soporte 24/7"],
       prices: [
         {
           type: "mes",
@@ -24,11 +25,12 @@ const typePlans = [
           type: "año",
           price_usd: 140.00
         },
-      ]
+      ],
+      href: "https://dashboard.iglenube.com/registro"
     },
     {
       title: "Josue",
-      services: ["300 miembros", "30 células/grupos", "App móvil y web", "Soporte 24/7"],
+      services: ["30 miembros", "30 células/grupos", "App móvil y web", "Soporte 24/7"],
       prices: [
         {
           type: "mes",
@@ -42,11 +44,12 @@ const typePlans = [
           type: "año",
           price_usd: 200.00
         },
-      ]
+      ],
+      href: "https://dashboard.iglenube.com/registro"
     },
     {
       title: "Moises",
-      services: ["750 miembros", "70 células/grupos", "App móvil y web", "Soporte 24/7"],
+      services: ["75 miembros", "70 células/grupos", "App móvil y web", "Soporte 24/7"],
       prices: [
         {
           type: "mes",
@@ -60,11 +63,12 @@ const typePlans = [
           type: "año",
           price_usd: 432.00
         },
-      ]
+      ],
+      href: "https://dashboard.iglenube.com/registro"
     },
     {
       title: "David",
-      services: ["2000 miembros", "1000 células/grupos", "App móvil y web", "Soporte 24/7"],
+      services: ["200 miembros", "1000 células/grupos", "App móvil y web", "Soporte 24/7"],
       prices: [
         {
           type: "mes",
@@ -78,7 +82,8 @@ const typePlans = [
           type: "año",
           price_usd: 648.00
         },
-      ]
+      ],
+      href: "https://dashboard.iglenube.com/registro"
     },
   ],
   [
@@ -98,7 +103,8 @@ const typePlans = [
           type: "año",
           price_usd: 1040.00
         },
-      ]
+      ],
+      href: "https://org.iglenube.com/registro"
     },
     {
       title: "José",
@@ -116,7 +122,8 @@ const typePlans = [
           type: "año",
           price_usd: 2223.00
         },
-      ]
+      ],
+      href: "https://org.iglenube.com/registro"
     },
     {
       title: "Levi",
@@ -134,7 +141,8 @@ const typePlans = [
           type: "año",
           price_usd: 4446.00
         },
-      ]
+      ],
+      href: "https://org.iglenube.com/registro"
     },
     {
       title: "Israel",
@@ -152,7 +160,8 @@ const typePlans = [
           type: "año",
           price_usd: 8892.00
         },
-      ]
+      ],
+      href: "https://org.iglenube.com/registro"
     },
   ]
 ];
@@ -194,7 +203,10 @@ const PriceSection = () => {
               ["text-gray-dark"]: !switchActive,
               ["text-gray"]: switchActive,
             })}
-            onClick={() => setSwitchActive(false)}
+            onClick={() => {
+              setSwitchActive(false)
+              handleClick(0)
+            }}
           >
             Independiente
           </span>
@@ -215,7 +227,10 @@ const PriceSection = () => {
               ["text-gray-dark"]: switchActive,
               ["text-gray"]: !switchActive,
             })}
-            onClick={() => setSwitchActive(true)}
+            onClick={() => {
+              setSwitchActive(true)
+              handleClick(1)
+            }}
           >
             Organización
           </span>
@@ -228,7 +243,7 @@ const PriceSection = () => {
         >
           {typePlans.map((plans) => <>
             <div
-              className="grid gap-2 mt-5 mb-3 lg:grid-cols-4 sm:mt-12 sm:mb-6 sm:grid-cols-2 min-w-full"
+              className="grid min-w-full gap-2 mt-5 mb-3 lg:grid-cols-4 sm:mt-12 sm:mb-6 sm:grid-cols-2"
               style={{ scrollSnapAlign: "center" }}
             >
               {plans.map((plan, index) => (
@@ -257,14 +272,11 @@ const PriceSection = () => {
                         ))}
                       </ul>
                       
-                      <a
-                        href="https://dashboard.iglenube.com/registro"
-                        target="_blank"
-                      >
+                      <OutboundLink href={plan.href} target="_blank">
                         <button className="w-full px-8 py-2 mt-8 font-semibold bg-white rounded shadow hover:shadow-none text-blue">
                           Adquirir
                         </button>
-                      </a>
+                      </OutboundLink>
 
                       <div className="flex flex-col items-center mt-3">
                         <span className="mb-1 text-sm text-gray">Paga seguro con</span>
@@ -294,11 +306,8 @@ const PriceSection = () => {
                           </li>
                         ))}
                       </ul>
-                      
-                      <a
-                        href="https://dashboard.iglenube.com/registro"
-                        target="_blank"
-                      >
+
+                      <OutboundLink href={plan.href} target="_blank">
                         <button className={cn("w-full px-8 py-2 mt-8 font-semibold text-white rounded shadow hover:shadow-none", {
                           ["bg-pink"]: index === 0,
                           ["bg-purple"]: index === 2,
@@ -306,7 +315,7 @@ const PriceSection = () => {
                         })}>
                           Adquirir
                         </button>
-                      </a>
+                      </OutboundLink>
                       
                       <div className="flex flex-col items-center mt-3">
                         <span className="mb-1 text-sm text-gray">Paga seguro con</span>

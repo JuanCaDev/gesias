@@ -6,6 +6,7 @@ import IconEmail from "../assets/email.svg";
 import IconTicket from "../assets/ticket.svg";
 import SubtitleSection from "./subtitle-section";
 import TitleSection from "./title-section";
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const ContactSection = () => {
   return (
@@ -22,23 +23,27 @@ const ContactSection = () => {
         data-sal-duration="600"
         data-sal-easing="ease-out-bounce"
       >
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 place-items-center sm:gap-20">
-          <a href="tel:+573176419012" className="flex flex-col items-center">
+        <div className="grid grid-cols-2 gap-4 place-items-center md:grid-cols-4 sm:gap-20">
+          <OutboundLink
+            href="https://calendly.com/iglenube"
+            target="_blank"
+            className="flex flex-col items-center"
+          >
             <IconCall width={64} />
             <p className="mt-1 text-gray-dark">Programar una llamada</p>
-          </a>
-          <a href="#" className="flex flex-col items-center">
+          </OutboundLink>
+          <OutboundLink href="https://api.whatsapp.com/send?phone=573176419012&text=Me%20interesa%20saber%20mas%20sobre%20Iglenube..." className="flex flex-col items-center">
             <IconChat width={64} />
             <p className="mt-1 text-gray-dark">Chatea con un agente</p>
-          </a>
-          <a href="mailto:soporte@iglenube.com" className="flex flex-col items-center">
+          </OutboundLink>
+          <OutboundLink href="mailto:soporte@iglenube.com" target="_blank" className="flex flex-col items-center">
             <IconEmail width={64} />
             <p className="mt-1 text-gray-dark">Enviar un correo</p>
-          </a>
-          <a href="#" className="flex flex-col items-center">
+          </OutboundLink>
+          <OutboundLink href="https://calendly.com/iglenube" target="_blank" className="flex flex-col items-center">
             <IconTicket width={64} />
             <p className="mt-1 text-gray-dark">Generar un ticket de soporte</p>
-          </a>
+          </OutboundLink>
         </div>
       </div>
     </section>
